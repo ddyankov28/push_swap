@@ -12,6 +12,27 @@
 
 #include "push_swap.h"
 
+void    check_args(int ac, char **av)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while(++i < ac)
+    {
+        j = 0;
+        while (av[i][j])
+        {
+            if (!ft_isdigit(av[i][j]) && av[i][j] != '-')
+            {
+                printf("Error\n");
+                exit (1);
+            }
+            j++;
+        }
+    }
+}
+
 void    get_size(int ac, t_stack *a)
 {
     int i;
@@ -32,6 +53,7 @@ int main(int ac, char **av)
     a->size = 0;
     b->size = 0;
     get_size(ac, a);
+    check_args(ac, av);
     a->s = malloc(sizeof(int) * a->size);
     int i = 0;
     while (i < ac - 1)

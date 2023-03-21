@@ -12,6 +12,54 @@
 
 #include "push_swap.h"
 
+void    take_args_if_in_strings(char **av, t_stack *a)
+{
+    int i = 1;
+    int c;
+    int ar = 0;
+    int size = 0;
+    while (av[i])
+    {
+        c = 0;
+        char **args = ft_split(av[i], ' ');
+        while (args[c] != NULL)
+        {
+            a->arr[ar] = ft_atoi(args[c]);
+            //printf("%d\n",a->arr[ar]);
+            c++;
+            ar++;
+            size++;
+        }
+        i++;
+    }
+    a->size = size;
+}
+
+void    check_doubles(t_stack *a,t_stack *b)
+{
+    int i;
+    int j;
+
+    i = 0;
+    while (i < a->size)
+    {
+        j = i + 1;
+        while (j < a->size)
+        {
+            if (a->arr[i] == a->arr[j])
+            {
+                ft_printf("Error\n");
+                free(a->arr);
+                free(a);
+                free(b);
+                exit(1);
+            }
+            j++;
+        }
+        i++;
+    }
+}
+
 void    check_args(int ac, char **av)
 {
     int i;
@@ -23,9 +71,9 @@ void    check_args(int ac, char **av)
         j = 0;
         while (av[i][j])
         {
-            if (!ft_isdigit(av[i][j]) && av[i][j] != '-')
+            if (!ft_isdigit(av[i][j]) && av[i][j] != '-' &&  av[i][j] != ' ')
             {
-                printf("Error\n");
+                ft_printf("Error\n");
                 exit (1);
             }
             j++;
@@ -54,21 +102,17 @@ int main(int ac, char **av)
     b->size = 0;
     get_size(ac, a);
     check_args(ac, av);
-    a->s = malloc(sizeof(int) * a->size);
+    a->arr = malloc(sizeof(int) * a->size);
+    take_args_if_in_strings(av, a);
+    check_doubles(a, b);
     int i = 0;
-    while (i < ac - 1)
-    {
-        a->s[i] = ft_atoi(av[i +1]);
-        i++;
-    }
-    i = 0;
     while (i < a->size)
     {
-        printf("N[%d]: %d\n",i + 1,a->s[i]);
+        ft_printf("%d\n",a->arr[i]);
         i++;
     }
     printf("Size is %d\n", a->size);
-    free(a->s);
+    free(a->arr);
     free(a);
     free(b);
     return 0;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddyankov <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dvienna <dvienna@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:55:52 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/03/16 09:56:14 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/03/23 14:23:43 by dvienna          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void    take_args_if_in_strings(char **av, t_stack *a)
         while (args[c] != NULL)
         {
             a->arr[ar] = ft_atoi(args[c]);
-            //printf("%d\n",a->arr[ar]);
             c++;
             ar++;
             size++;
@@ -105,13 +104,14 @@ int main(int ac, char **av)
     a->arr = malloc(sizeof(int) * a->size);
     take_args_if_in_strings(av, a);
     check_doubles(a, b);
+    //works sa(a);
     int i = 0;
     while (i < a->size)
     {
-        ft_printf("%d\n",a->arr[i]);
+        ft_printf("%d ",a->arr[i]);
         i++;
     }
-    printf("Size is %d\n", a->size);
+    ft_printf("Size is %d\n", a->size);
     free(a->arr);
     free(a);
     free(b);

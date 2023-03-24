@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dvienna <dvienna@student.42.fr>            +#+  +:+       +#+         #
+#    By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:55:39 by ddyankov          #+#    #+#              #
-#    Updated: 2023/03/22 12:59:44 by dvienna          ###   ########.fr        #
+#    Updated: 2023/03/23 17:24:04 by ddyankov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC = main.c sort_operations.c
+SRC = main.c sort_operations.c push.c
 
 OBJ = $(SRC:.c=.o)
 

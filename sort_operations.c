@@ -30,4 +30,5 @@ void	ss(t_stack *a, t_stack *b)
 {
 	sa(a);
 	sb(b);
+	ft_printf("ss\n");
 }

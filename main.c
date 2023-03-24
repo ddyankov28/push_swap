@@ -3,35 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dvienna <dvienna@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:55:52 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/03/23 14:23:43 by dvienna          ###   ########.fr       */
+/*   Updated: 2023/03/24 18:04:17 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    take_args_if_in_strings(char **av, t_stack *a)
+void	take_args_if_in_strings(char **av, t_stack *a)
 {
-    int i = 1;
-    int c;
-    int ar = 0;
-    int size = 0;
-    while (av[i])
-    {
-        c = 0;
-        char **args = ft_split(av[i], ' ');
-        while (args[c] != NULL)
-        {
-            a->arr[ar] = ft_atoi(args[c]);
-            c++;
-            ar++;
-            size++;
-        }
-        i++;
-    }
-    a->size = size;
+	int	i;
+	int	c;
+
+	i = 1;
+	while (av[i])
+	{
+		a->size--;
+		c = 0;
+		char **args = ft_split(av[i], ' ');
+		while (args[c] != NULL)
+		{
+			c++;
+			a->size++;
+		}
+		i++;
+	}
 }
 
 void    check_doubles(t_stack *a,t_stack *b)
@@ -101,17 +99,23 @@ int main(int ac, char **av)
     b->size = 0;
     get_size(ac, a);
     check_args(ac, av);
-    a->arr = malloc(sizeof(int) * a->size);
     take_args_if_in_strings(av, a);
+    printf("Array size is %d\n",a->size);
+    exit(0);
     check_doubles(a, b);
-    //works sa(a);
+    a->arr = malloc(sizeof(int) * a->size);
+    b->arr = malloc(sizeof(int) * b->size);
+    //sa(a);
+    //pb(a, b);
+    //pb(a, b);
+    //pb(a, b);
     int i = 0;
-    while (i < a->size)
+    while (i < 6)
     {
-        ft_printf("%d ",a->arr[i]);
+        ft_printf("Stack A: %d \t\tStack B: %d\n\n",a->arr[i],b->arr[i]);
         i++;
     }
-    ft_printf("Size is %d\n", a->size);
+    ft_printf("Size of A: %d\nSize of B: %d\n", a->size, b->size);
     free(a->arr);
     free(a);
     free(b);

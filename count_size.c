@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_operations.c                                  :+:      :+:    :+:   */
+/*   count_size.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 09:43:26 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/03/29 12:04:02 by ddyankov         ###   ########.fr       */
+/*   Created: 2023/03/27 09:51:42 by ddyankov          #+#    #+#             */
+/*   Updated: 2023/03/29 12:21:38 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(int *a, int *b)
+void	get_size(char **av, t_stack *a)
 {
-	int	swap;
+	int		i;
+	int		c;
+	char	**args;
 
-	swap = *a;
-	*a = *b;
-	*b = swap;
-}
-
-void    sa(t_stack *a)
-{
-    ft_swap(&a->arr[0],&a->arr[1]);
-	ft_printf("sa\n");
-}
-
-void	sb(t_stack *b)
-{
-	if (b->size > 1)
+	i = 1;
+	while (av[i])
 	{
-		ft_swap(&b->arr[0],&b->arr[1]);
-		ft_printf("sb\n");
+		c = 0;
+		args = ft_split(av[i], ' ');
+		while (args[c])
+		{
+			free(args[c]);   
+			c++;
+			a->size++;
+		}
+		free(args);
+		i++;
 	}
-}
-
-void	ss(t_stack *a, t_stack *b)
-{
-	sa(a);
-	sb(b);
-	ft_printf("ss\n");
 }

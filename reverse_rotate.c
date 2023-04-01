@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:33:40 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/03/29 15:48:30 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/03/30 13:20:29 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void    rra(t_stack *a)
         i--;
     }
     a->arr[0] = temp;
+    ft_printf("rra\n");
 }
 
 void    rrb(t_stack *b)
@@ -40,10 +41,12 @@ void    rrb(t_stack *b)
         i--;
     }
     b->arr[0] = temp;
+    ft_printf("rrb\n");
 }
 
 void    rrr(t_stack *a, t_stack *b)
 {
     rra(a);
     rrb(b);
+    ft_printf("rrr\n");
 }

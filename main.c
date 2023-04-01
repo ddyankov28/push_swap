@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:55:52 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/03/29 16:05:26 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/03/31 15:45:22 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,16 @@ int	main(int ac, char **av)
 	put_numbers_in_arr(av, a, b);
 	check_doubles(a, b);
 	if (is_sorted(a) == 0)
+	{
 		ft_printf("IS ALREADY SORTED\n");
-	pb(a,b);
-	for(int i = 0; i < 5; i++)
-		ft_printf("Stack A: %d \t\tStack B: %d\n\n", a->arr[i], b->arr[i]);
-	ft_printf("Size of A: %d\nSize of B: %d\n", a->size, b->size);
+		ft_error(a,b);
+	}
+	sort_three(a);
+	sort_four(a, b);
+	sort_five(a, b);
+	for(int i = 0; i < a->size; i++)
+		printf("Stack A: %d \t\tStack B: %d\n\n", a->arr[i], b->arr[i]);
+	printf("Size of A: %d\nSize of B: %d\n", a->size, b->size);
 	free(a->arr);
 	free(b->arr);
 	free(a);

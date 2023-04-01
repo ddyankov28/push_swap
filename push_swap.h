@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:55:18 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/03/29 15:47:24 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/03/31 14:30:27 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ void    rr(t_stack *a, t_stack *b);
 void    rra(t_stack *a);
 void    rrb(t_stack *b);
 void    rrr(t_stack *a, t_stack *b);
+void    sort_five(t_stack *a, t_stack *b);
+void    sort_three(t_stack *a);
+void    sort_four(t_stack *a, t_stack *b);
 int     modified_atoi(const char *str, t_stack *a);
+void    find_small(t_stack *a, t_stack *b);
 
 #endif

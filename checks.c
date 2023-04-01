@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:58:10 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/03/29 13:46:46 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/03/30 12:48:12 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ int modified_atoi(const char *str, t_stack *a)
 	sign = 1;
 	i = 0;
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		a++;
+		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign *= -1;
 		i++;
+		if (!ft_isdigit(str[i]))
+			a->flag = 1;
 	}
 	while (ft_isdigit(str[i]))
 	{
@@ -50,7 +52,7 @@ void	check_args(int ac, char **av)
 		j = 0;
 		while (av[i][j])
 		{
-			if (!ft_isdigit(av[i][j]) && av[i][j] != '-' && av[i][j] != ' ')
+			if ((!ft_isdigit(av[i][j]) && av[i][j] != '-' && av[i][j] != ' '))
 			{
 				ft_printf("Error: Wrong Char\n");
 				exit(1);

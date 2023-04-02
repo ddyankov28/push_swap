@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:33:40 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/03/30 13:20:29 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/02 10:25:24 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void    rra(t_stack *a)
     int i;
     int temp;
 
-    i = a->size;
+    i = a->size - 1;
     temp = a->arr[a->size - 1];
     while (i > 0)
     {
@@ -33,7 +33,7 @@ void    rrb(t_stack *b)
     int i;
     int temp;
 
-    i = b->size;
+    i = b->size - 1;
     temp = b->arr[b->size - 1];
     while (i > 0)
     {

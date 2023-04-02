@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 09:43:26 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/03/29 12:04:02 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/02 15:21:47 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,11 @@ void	ft_swap(int *a, int *b)
 
 void    sa(t_stack *a)
 {
-    ft_swap(&a->arr[0],&a->arr[1]);
-	ft_printf("sa\n");
+	if (a->size >= 1)
+     {
+		ft_swap(&a->arr[0],&a->arr[1]);
+		ft_printf("sa\n");
+	 }	
 }
 
 void	sb(t_stack *b)

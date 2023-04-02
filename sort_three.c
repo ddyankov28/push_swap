@@ -6,31 +6,31 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 10:00:17 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/03/31 14:30:11 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:17:02 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void     pb_small(t_stack *a, t_stack *b)
+int     find_idx(t_stack *a)
 {
-    int i = 1;
-    int small = a->arr[0];
+    int idx;
+    int i;
+
+    idx = 0;
+    i = 1;
     while (i < a->size)
     {
-        if (a->arr[i] < small)
-        {
-            small = a->arr[i];
-            ft_swap(&a->arr[0],&a->arr[i]);
-        }
+        if (a->arr[idx] > a->arr[i])
+            idx = i;
         i++;
     }
-    pb(a,b);
+    return (idx);
 }
 
 void    sort_three(t_stack *a)
 {
-    if (a->size < 4)
+    if (a->size == 2 || a->size == 3)
     {
         if ((a->arr[0] > a->arr[1] && a->arr[0] < a->arr[2]) || a->size == 2)
             sa(a);
@@ -54,20 +54,44 @@ void    sort_three(t_stack *a)
 void    sort_four(t_stack *a, t_stack *b)
 {
     if (a->size == 4)
-    {    
-        pb_small(a,b);
+    {   
+        if (find_idx(a) == 0)
+            pb(a, b);
+        else if (find_idx(a) == 1)
+        {
+            sa(a);
+            pb(a, b);
+        }
+        else if (find_idx(a) == 2)
+        {
+            ra(a);
+            sa(a);
+            pb(a,b);
+        }
+        else if (find_idx(a) == 3)
+        {
+            rra(a);
+            pb(a, b);
+        }
         sort_three(a);
-        pa(a,b);
+        pa(a, b);
     }
 }
 
 void    sort_five(t_stack *a, t_stack *b)
 {
-    if (a-> size == 5)
+    if (a->size == 5)
     {
-        pb_small(a,b);
+        pb(a, b);
         sort_four(a, b);
         pa(a, b);
+        int i = 0;
+        while (i < a->size)
+        {
+            if (s->arr[0] >)
+            
+        }
+        
     }
 }
 

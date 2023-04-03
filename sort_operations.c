@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 09:43:26 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/02 15:21:47 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:10:21 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,4 @@ void	sb(t_stack *b)
 	}
 }
 
-void	ss(t_stack *a, t_stack *b)
-{
-	sa(a);
-	sb(b);
-	ft_printf("ss\n");
-}
+

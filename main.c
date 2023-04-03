@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:55:52 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/02 22:56:20 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:10:46 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,6 @@ int	main(int ac, char **av)
 			sort_four(a, b);
 			sort_five(a, b);
 		}
-		else if (a->size > 5)
-			radix_sort(a, b);
 	}
 	/*for(int i = 0; i < a->size; i++)
 		ft_printf("Stack A: %d \t\tStack B: %d\n\n", a->arr[i], b->arr[i]);

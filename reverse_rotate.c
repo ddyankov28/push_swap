@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:33:40 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/02 10:25:24 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/03 13:40:36 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,4 @@ void    rrb(t_stack *b)
     }
     b->arr[0] = temp;
     ft_printf("rrb\n");
-}
-
-void    rrr(t_stack *a, t_stack *b)
-{
-    rra(a);
-    rrb(b);
-    ft_printf("rrr\n");
 }

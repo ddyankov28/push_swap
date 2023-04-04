@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 10:00:17 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/03 17:20:36 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:07:04 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int     find_idx(t_stack *a)
     i = 1;
     while (i < a->size)
     {
-        if (a->arr[idx] > a->arr[i])
+        if (a->rank[idx] > a->rank[i])
             idx = i;
         i++;
     }
@@ -32,21 +32,21 @@ void    sort_three(t_stack *a)
 {
     if (a->size == 2 || a->size == 3)
     {
-        if ((a->arr[0] > a->arr[1] && a->arr[0] < a->arr[2]) || a->size == 2)
+        if ((a->rank[0] > a->rank[1] && a->rank[0] < a->rank[2]) || a->size == 2)
             sa(a);
-        else if (a->arr[1] < a->arr[0] && a->arr[1] > a->arr[2])
+        else if (a->rank[1] < a->rank[0] && a->rank[1] > a->rank[2])
         {
             sa(a);
             rra(a);
         }
-        else if (a->arr[2] > a->arr[1] && a->arr[2] < a->arr[0])
+        else if (a->rank[2] > a->rank[1] && a->rank[2] < a->rank[0])
             ra(a);
-        else if (a->arr[2] < a->arr[1] && a->arr[2] > a->arr[0])
+        else if (a->rank[2] < a->rank[1] && a->rank[2] > a->rank[0])
         {
             sa(a);
             ra(a);
         }
-        else if (a->arr[0] < a->arr[1] && a->arr[0] > a->arr[2])
+        else if (a->rank[0] < a->rank[1] && a->rank[0] > a->rank[2])
             rra(a);
     }
 }

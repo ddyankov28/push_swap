@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 09:40:59 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/02 11:30:15 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:50:49 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@ void	pa(t_stack *a, t_stack *b)
 	{
 		while (i > 0)
 		{
-			a->arr[i] = a->arr[i - 1];
+			a->rank[i] = a->rank[i - 1];
 			i--;
 		}
 		a->size++;
 		i = 0;
-		a->arr[0] = b->arr[0];
+		a->rank[0] = b->rank[0];
 		while (i < b->size)
 		{
-			b->arr[i] = b->arr[i + 1];
+			b->rank[i] = b->rank[i + 1];
 			i++;
 		}
 		b->size--;
@@ -46,15 +46,15 @@ void	pb(t_stack *a, t_stack *b)
 	{
 		while (i > 0)
 		{
-			b->arr[i] = b->arr[i-1];
+			b->rank[i] = b->rank[i-1];
 			i--;
 		}
 		b->size++;
 		i = 0;
-		b->arr[0] = a->arr[0];
+		b->rank[0] = a->rank[0];
 		while (i < a->size)
 		{
-			a->arr[i] = a->arr[i + 1];
+			a->rank[i] = a->rank[i + 1];
 			i++;
 		}
 		a->size--;

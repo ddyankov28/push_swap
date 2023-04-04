@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:33:40 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/03 13:40:36 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/04 11:57:35 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void    rra(t_stack *a)
     int temp;
 
     i = a->size - 1;
-    temp = a->arr[a->size - 1];
+    temp = a->rank[a->size - 1];
     while (i > 0)
     {
-        a->arr[i] = a->arr[i - 1];
+        a->rank[i] = a->rank[i - 1];
         i--;
     }
-    a->arr[0] = temp;
+    a->rank[0] = temp;
     ft_printf("rra\n");
 }
 
@@ -34,12 +34,12 @@ void    rrb(t_stack *b)
     int temp;
 
     i = b->size - 1;
-    temp = b->arr[b->size - 1];
+    temp = b->rank[b->size - 1];
     while (i > 0)
     {
-        b->arr[i] = b->arr[i - 1];
+        b->rank[i] = b->rank[i - 1];
         i--;
     }
-    b->arr[0] = temp;
+    b->rank[0] = temp;
     ft_printf("rrb\n");
 }

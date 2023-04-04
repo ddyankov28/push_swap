@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:55:18 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/03 18:10:35 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/04 12:35:45 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_stack
     int *arr;
     int size;
     int flag;
+    int *rank;
 }       t_stack;
 
 void	ft_error(t_stack *a, t_stack *b);
@@ -43,5 +44,7 @@ void    sort_five(t_stack *a, t_stack *b);
 int     modified_atoi(const char *str, t_stack *a);
 int     find_idx(t_stack *a);
 int		is_sorted(t_stack *a);
+void    find_rank(t_stack *a, t_stack *b);
+void	radix_sort(t_stack *a, t_stack *b);
 
 #endif

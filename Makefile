@@ -6,14 +6,14 @@
 #    By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 09:55:39 by ddyankov          #+#    #+#              #
-#    Updated: 2023/03/30 12:59:53 by ddyankov         ###   ########.fr        #
+#    Updated: 2023/04/04 11:30:35 by ddyankov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC = main.c checks.c count_size.c sort_operations.c push.c rotate.c \
-		reverse_rotate.c sort_three.c
+		reverse_rotate.c sort_three.c find_rank.c radix.c
 
 OBJ = $(SRC:.c=.o)
 

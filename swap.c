@@ -1,48 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 15:20:03 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/05 11:24:26 by ddyankov         ###   ########.fr       */
+/*   Created: 2023/03/27 09:43:26 by ddyankov          #+#    #+#             */
+/*   Updated: 2023/04/05 12:16:45 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_stack *a)
+void	ft_swap(int *a, int *b)
 {
-	int	i;
-	int	temp;
+	int	swap;
 
-	i = 0;
-	temp = a->rank[0];
-	while (i < a->size - 1)
-	{
-		a->rank[i] = a->rank[i + 1];
-		i++;
-	}
-	a->rank[a->size - 1] = temp;
-	ft_printf("ra\n");
+	swap = *a;
+	*a = *b;
+	*b = swap;
 }
 
-void	rb(t_stack *b)
+void	sa(t_stack *a)
 {
-	int	i;
-	int	temp;
-
-	i = 0;
-	if (b->size > 0)
+	if (a->size >= 1)
 	{
-		temp = b->rank[0];
-		while (i < b->size - 1)
-		{
-			b->rank[i] = b->rank[i + 1];
-			i++;
-		}
-		b->rank[b->size - 1] = temp;
-		ft_printf("rb\n");
+		ft_swap(&a->rank[0], &a->rank[1]);
+		ft_printf("sa\n");
+	}
+}
+
+void	sb(t_stack *b)
+{
+	if (b->size > 1)
+	{
+		ft_swap(&b->rank[0], &b->rank[1]);
+		ft_printf("sb\n");
 	}
 }

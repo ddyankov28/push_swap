@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 09:51:42 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/03/31 15:54:36 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/05 11:27:00 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	get_size(char **av, t_stack *a)
 		args = ft_split(av[i], ' ');
 		while (args[c])
 		{
-			free(args[c]);   
+			free(args[c]);
 			c++;
 			a->size++;
 		}

@@ -6,13 +6,13 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:58:10 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/03/30 12:48:12 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/05 12:34:40 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int modified_atoi(const char *str, t_stack *a)
+int	modified_atoi(const char *str, t_stack *a)
 {
 	long	result;
 	int		sign;
@@ -36,12 +36,12 @@ int modified_atoi(const char *str, t_stack *a)
 		result = result * 10 + str[i] - 48;
 		i++;
 		if (result * sign > 2147483647 || result * sign < -2147483648)
-            a->flag = 1;
+			a->flag = 1;
 	}
 	return (result * sign);
 }
 
-void	check_args(int ac, char **av)
+void	check_args(int ac, char **av, t_stack *a, t_stack *b)
 {
 	int	i;
 	int	j;
@@ -52,9 +52,12 @@ void	check_args(int ac, char **av)
 		j = 0;
 		while (av[i][j])
 		{
-			if ((!ft_isdigit(av[i][j]) && av[i][j] != '-' && av[i][j] != ' '))
+			if ((!ft_isdigit(av[i][j]) && av[i][j] != '-' && av[i][j] != ' '
+					&& av[i][j] != '+'))
 			{
-				ft_printf("Error: Wrong Char\n");
+				free(a);
+				free(b);
+				ft_printf("Error\n");
 				exit(1);
 			}
 			j++;
@@ -74,12 +77,23 @@ void	check_doubles(t_stack *a, t_stack *b)
 		while (j < a->size)
 		{
 			if (a->arr[i] == a->arr[j])
-            {
-                printf("Doubles\n");
-                ft_error(a, b);
-            }
-            j++;
-        }
+				ft_error(a, b);
+			j++;
+		}
 		i++;
 	}
+}
+
+int	is_sorted(t_stack *a)
+{
+	int	i;
+
+	i = 0;
+	while (i < a->size - 1)
+	{
+		if (a->rank[i] > a->rank[i + 1])
+			return (1);
+		i++;
+	}
+	return (0);
 }

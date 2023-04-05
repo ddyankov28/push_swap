@@ -6,40 +6,21 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:55:52 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/04 16:44:17 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/05 11:25:25 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		is_sorted(t_stack *a)
-{
-	int i = 0;
-	while (i < a->size - 1)
-	{
-		if (a->rank[i] > a->rank[i + 1])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-void	ft_error(t_stack *a, t_stack *b)
-{
-	free(a->arr);
-	free(b->arr);
-	free(a);
-	free(b);
-	ft_printf("Error\n");
-	exit(1);
-}
-
 void	put_numbers_in_arr(char **av, t_stack *a, t_stack *b)
 {
-	int i = 1;
-	int c;
-	int j = 0;
-	char **args;
+	int		i;
+	int		c;
+	int		j;
+	char	**args;
+
+	i = 1;
+	j = 0;
 	while (av[i])
 	{
 		c = 0;
@@ -55,45 +36,27 @@ void	put_numbers_in_arr(char **av, t_stack *a, t_stack *b)
 		i++;
 	}
 	if (a->flag == 1)
-	{
-    	printf("NO INT\n");
-        ft_error(a, b);	
-	}
+		ft_error(a, b);
 }
 
 int	main(int ac, char **av)
 {
-	t_stack     *a;
-	t_stack     *b;
+	t_stack	*a;
+	t_stack	*b;
 
 	a = (t_stack *)malloc(sizeof(t_stack));
 	b = (t_stack *)malloc(sizeof(t_stack));
 	a->size = 0;
 	b->size = 0;
 	a->flag = 0;
-	check_args(ac, av);
+	check_args(ac, av, a, b);
 	get_size(av, a);
 	a->arr = malloc(sizeof(int) * (a->size + 1));
 	b->arr = malloc(sizeof(int) * (a->size + 1));
 	put_numbers_in_arr(av, a, b);
 	check_doubles(a, b);
 	find_rank(a, b);
-	if (is_sorted(a) == 1)
-	{
-		if (a->size > 1 && a->size < 6)
-		{
-			sort_three(a);
-			sort_four(a, b);
-			sort_five(a, b);
-		}
-		else
-			radix_sort(a, b);
-	}
-	free(a->rank);
-	free(b->rank);
-	free(a->arr);
-	free(b->arr);
-	free(a);
-	free(b);
+	start_sorting(a, b);
+	end_free(a, b);
 	return (0);
 }

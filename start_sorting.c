@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_operations.c                                  :+:      :+:    :+:   */
+/*   start_sorting.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 09:43:26 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/04 11:58:04 by ddyankov         ###   ########.fr       */
+/*   Created: 2023/04/05 11:10:54 by ddyankov          #+#    #+#             */
+/*   Updated: 2023/04/05 11:22:31 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_swap(int *a, int *b)
+void	start_sorting(t_stack *a, t_stack *b)
 {
-	int	swap;
-
-	swap = *a;
-	*a = *b;
-	*b = swap;
-}
-
-void    sa(t_stack *a)
-{
-	if (a->size >= 1)
-     {
-		ft_swap(&a->rank[0],&a->rank[1]);
-		ft_printf("sa\n");
-	 }	
-}
-
-void	sb(t_stack *b)
-{
-	if (b->size > 1)
+	if (is_sorted(a) == 1)
 	{
-		ft_swap(&b->rank[0],&b->rank[1]);
-		ft_printf("sb\n");
+		if (a->size > 1 && a->size < 6)
+		{
+			sort_three(a);
+			sort_four(a, b);
+			sort_five(a, b);
+		}
+		else
+			radix_sort(a, b);
 	}
 }
-
-

@@ -6,11 +6,29 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:58:10 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/05 12:34:40 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/05 15:58:14 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	modified_atoi2(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]) && str[i] != ' ')
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 int	modified_atoi(const char *str, t_stack *a)
 {
@@ -52,8 +70,7 @@ void	check_args(int ac, char **av, t_stack *a, t_stack *b)
 		j = 0;
 		while (av[i][j])
 		{
-			if ((!ft_isdigit(av[i][j]) && av[i][j] != '-' && av[i][j] != ' '
-					&& av[i][j] != '+'))
+			if (modified_atoi2(av[i]) == 1)
 			{
 				free(a);
 				free(b);

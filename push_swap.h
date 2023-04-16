@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 09:55:18 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/05 11:22:49 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/16 20:10:50 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void	sort_four(t_stack *a, t_stack *b);
 void	sort_five(t_stack *a, t_stack *b);
 int		modified_atoi(const char *str, t_stack *a);
 int		find_idx(t_stack *a);
-int		is_sorted(t_stack *a);
+int		is_sort(t_stack *a);
+int		is_r(t_stack *b);
 void	find_rank(t_stack *a, t_stack *b);
 void	radix_sort(t_stack *a, t_stack *b);
 void	ft_error(t_stack *a, t_stack *b);

@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:33:40 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/05 12:16:33 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/16 20:11:04 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,17 @@ void	rrb(t_stack *b)
 	}
 	b->rank[0] = temp;
 	ft_printf("rrb\n");
+}
+int	is_r(t_stack *b)
+{
+	int	i;
+
+	i = 0;
+	while (i < b->size - 1)
+	{
+		if (b->rank[i] < b->rank[i + 1])
+			return (1);
+		i++;
+	}
+	return (0);
 }

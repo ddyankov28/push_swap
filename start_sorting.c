@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 11:10:54 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/07 10:20:05 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/16 20:12:28 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	start_sorting(t_stack *a, t_stack *b)
 {
-	if (is_sorted(a) == 1)
+	if (is_sort(a) == 1)
 	{
 		if (a->size > 1 && a->size < 6)
 		{

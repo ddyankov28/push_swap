@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:58:10 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/05 15:58:14 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/16 20:10:59 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	check_doubles(t_stack *a, t_stack *b)
 	}
 }
 
-int	is_sorted(t_stack *a)
+int	is_sort(t_stack *a)
 {
 	int	i;
 

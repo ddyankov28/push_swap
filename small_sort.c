@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 10:00:17 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/05 11:26:08 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/16 18:43:38 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ int	find_idx(t_stack *a)
 
 void	sort_three(t_stack *a)
 {
-	if (a->size == 2 || a->size == 3)
+	if (a->size == 2)
+		sa(a);
+	else if (a->size == 3)
 	{
-		if ((a->rank[0] > a->rank[1] && a->rank[0] < a->rank[2])
-			|| a->size == 2)
+		if (a->rank[0] > a->rank[1] && a->rank[0] < a->rank[2])
 			sa(a);
 		else if (a->rank[1] < a->rank[0] && a->rank[1] > a->rank[2])
 		{

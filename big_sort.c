@@ -16,10 +16,10 @@ void	radix_sort_stack_a(t_stack *a, t_stack *b, int a_size, int i)
 {
 	while (a_size > 0)
 	{
-		if (((a->rank[0] >> i) & 1) == 0 && is_sorted(a) == 1)
-			pb(a, b);
-		else if (is_sorted(a) == 1)
+		if (((a->rank[0] >> i) & 1) == 1 && is_sorted(a) == 1)
 			ra(a);
+		else if (is_sorted(a) == 1)
+			pb(a ,b);
 		a_size--;
 	}
 }
@@ -38,10 +38,10 @@ void	radix_sort_stack_b(t_stack *a, t_stack *b, int b_size, int i)
 	}
 	while (b_size > 0 && i <= bit)
 	{
-		if (((b->rank[0] >> i) & 1) == 0 && is_sorted(a) == 1)
-			rb(b);
-		else if (is_sorted(a) == 1)
+		if (((b->rank[0] >> i) & 1) == 1 && is_sorted(a) == 1)
 			pa(a, b);
+		else if (is_sorted(a) == 1)
+			rb(b);
 		b_size--;
 	}
 }

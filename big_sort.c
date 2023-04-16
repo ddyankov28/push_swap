@@ -6,7 +6,7 @@
 /*   By: ddyankov <ddyankov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 11:06:48 by ddyankov          #+#    #+#             */
-/*   Updated: 2023/04/05 12:15:46 by ddyankov         ###   ########.fr       */
+/*   Updated: 2023/04/16 18:50:50 by ddyankov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	radix_sort_stack_a(t_stack *a, t_stack *b, int a_size, int i)
 		if (((a->rank[0] >> i) & 1) == 1 && is_sorted(a) == 1)
 			ra(a);
 		else if (is_sorted(a) == 1)
-			pb(a ,b);
+			pb (a, b);
 		a_size--;
 	}
 }

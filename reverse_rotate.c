@@ -43,6 +43,7 @@ void	rrb(t_stack *b)
 	b->rank[0] = temp;
 	ft_printf("rrb\n");
 }
+
 int	is_r(t_stack *b)
 {
 	int	i;

@@ -19,7 +19,7 @@ void	radix_sort_stack_a(t_stack *a, t_stack *b, int a_size, int i)
 		if (((a->rank[0] >> i) & 1) == 1)
 			ra(a);
 		else if (is_sort(a) == 0 && is_r(b) == 0)
-			break;
+			break ;
 		else
 			pb (a, b);
 		a_size--;
@@ -43,7 +43,7 @@ void	radix_sort_stack_b(t_stack *a, t_stack *b, int b_size, int i)
 		if (((b->rank[0] >> i) & 1) == 1)
 			pa(a, b);
 		else if (is_sort(a) == 0 && is_r(b) == 0)
-			break;
+			break ;
 		else
 			rb(b);
 		b_size--;

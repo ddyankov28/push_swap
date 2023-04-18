@@ -20,14 +20,16 @@ OBJ = $(SRC:.c=.o)
 
 CFLAGS = -Wall -Werror -Wextra -g
 
-LIBFT = libft/libft.a
+LIBFT = ./libft/libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@make -C libft
+$(NAME): $(LIBFT) $(OBJ)
 	@cc $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
+$(LIBFT):
+	 @make -C libft
+	 
 clean:
 		@rm -f $(OBJ)
 		@make clean -C libft
